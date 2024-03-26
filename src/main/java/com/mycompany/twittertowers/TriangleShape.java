@@ -11,32 +11,13 @@ class TriangleShape extends TowerShape {
         return 2 * width + Math.sqrt(2) * width;
     }
 
-//    public void printShape() {
-//        if (width % 2 == 0 || width >= 2 * height) {
-//            System.out.println("Cannot print triangle.");
-//        } else {
-//            int mid = width / 2;
-//            int spaces = mid;
-//            for (int i = 0; i < height; i++) {
-//                for (int j = 0; j < spaces; j++) {
-//                    System.out.print(" ");
-//                }
-//                for (int k = 0; k < (2 * i) + 1; k++) {
-//                    System.out.print("*");
-//                }
-//                spaces--;
-//                System.out.println();
-//            }
-//        }
-//    }
-    
     public void printTriangle() {
         if (width % 2 == 0 || width >= 2 * height) {
             System.out.println("Cannot print triangle.");
         } else {
             int spaces = width / 2;
-            int numRows = ((height - 2) / (width / 2) - 1);
-            int upRow = (height - 2 - numRows * ((width / 2) - 1)) + numRows;
+            int numRows = height > 2 ? ((height - 2) / (width / 2 - 1)) : 0;
+            int upRow = (height - 2 - numRows * (width / 2 - 1)) + numRows;
             int difference = upRow - numRows;
             int num = 1;
             boolean flag = false;

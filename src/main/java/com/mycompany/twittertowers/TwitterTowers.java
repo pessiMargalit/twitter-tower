@@ -9,23 +9,17 @@ public class TwitterTowers {
         int choice;
 
         do {
-            System.out.println("1. Rectangular Tower");
-            System.out.println("2. Triangular Tower");
-            System.out.println("3. Exit");
-            System.out.print("Enter your choice: ");
+            printOptionsMenu();
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
+                case 1 ->
                     calculateRectangularTower(scanner);
-                    break;
-                case 2:
+                case 2 ->
                     calculateTriangularTower(scanner);
-                    break;
-                case 3:
+                case 3 ->
                     System.out.println("Exiting program...");
-                    break;
-                default:
+                default ->
                     System.out.println("Invalid choice. Please enter again.");
             }
         } while (choice != 3);
@@ -50,33 +44,41 @@ public class TwitterTowers {
     }
 
     public static void calculateTriangularTower(Scanner scanner) {
-        System.out.print("Enter height of the triangle: ");
+        System.out.print("Enter height of the triangle tower: ");
         int height = scanner.nextInt();
-        System.out.print("Enter width of the triangle: ");
+        System.out.print("Enter width of the triangle tower: ");
         int width = scanner.nextInt();
         TriangleShape triangle = new TriangleShape(width, height);
         int choice;
 
         do {
-            System.out.println("1. Calculate the perimeter of the triangle");
-            System.out.println("2. Print the triangle");
-            System.out.println("3. Exit");
-            System.out.print("Enter your choice: ");
+            PrintTriangularTowerMenu();
             choice = scanner.nextInt();
-
             switch (choice) {
-                case 1:
+                case 1 ->
                     System.out.println("Perimeter of the triangle tower: " + triangle.calcPerimeter());
-                    break;
-                case 2:
+                case 2 ->
                     triangle.printTriangle();
-                    break;
-                default:
+                default ->
                     System.out.println("Invalid choice. Please enter again.");
             }
-        } while (choice != 3);
+        } while (choice != 1 && choice != 2);
+    }
 
-        scanner.close();
+    public static void printOptionsMenu() {
+        System.out.println("Twitter Towers Menu");
+        System.out.println("1. Rectangular Tower");
+        System.out.println("2. Triangular Tower");
+        System.out.println("3. Exit");
+        System.out.print("Enter your choice: ");
+    }
+
+    public static void PrintTriangularTowerMenu() {
+        System.out.println("1. Calculate the perimeter of the triangle");
+        System.out.println("2. Print the triangle");
+        System.out.println("3. Exit");
+        System.out.print("Enter your choice: ");
+
     }
 
 }
