@@ -16,7 +16,7 @@ class TriangleShape extends TowerShape {
             System.out.println("Cannot print triangle.");
         } else {
             int spaces = width / 2;
-            int numRows = height > 2 ? ((height - 2) / (width / 2 - 1)) : 0;
+            int numRows = height > 2 && width > 3 ? ((height - 2) / (width / 2 - 1)) : width > 3 ? 0 : height - 2;
             int upRow = (height - 2 - numRows * (width / 2 - 1)) + numRows;
             int difference = upRow - numRows;
             int num = 1;
