@@ -8,7 +8,8 @@ class TriangleShape extends TowerShape {
 
     @Override
     public double calcPerimeter() {
-        return 2 * width + Math.sqrt(2) * width;
+        double triangleSide = Math.sqrt(Math.pow((width / 2.0), 2) + Math.pow(height, 2));
+        return 2 * triangleSide + width;
     }
 
     public void printTriangle() {
